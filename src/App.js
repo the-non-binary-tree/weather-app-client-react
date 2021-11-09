@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       Wear The Weather
-      <Reservation />
+      <QueryForm />
       <div>Returned Data
         
       </div>
@@ -15,11 +15,11 @@ function App() {
     </div>
   );
 }
-class Reservation extends React.Component {
+class QueryForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      aqi: true,
+      aqi: false,
       postalCode: 98144,
       location: 'Seattle'
     };
@@ -39,73 +39,43 @@ class Reservation extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log('Submitted:')
+    console.log('Submitted:', JSON.stringify(event.target.state))
   }
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Get Air Quality Index:
-          <input
-            name="aqi"
-            type="checkbox"
-            checked={this.state.aqi}
-            onChange={this.handleInputChange} />
-        </label>
-        <br />
-        <label>
-          Postal Code:
-          <input
-            name="postalCode"
-            type="number"
-            value={this.state.postalCode}
-            onChange={this.handleInputChange} />
-        </label>
-        <br />
-        <label>
-          Location:
-          <input
-            name="location"
-            type="text"
-            value={this.state.location}
-            onChange={this.handleInputChange} />
-        </label>
-        <br />
-        <input type="submit" value="Submit" />
-      </form>
-    );
-  }
-}
-
-
-class NameForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {value: ''};
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleChange(event) {
-    this.setState({value: event.target.value});
-  }
-
-  handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
-    event.preventDefault();
-  }
-
-  render() {
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Name:
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
+      <div>Query Form
+        <form onSubmit={this.handleSubmit}>
+          <label>
+            Get Air Quality Index:
+            <input
+              name="aqi"
+              type="checkbox"
+              checked={this.state.aqi}
+              onChange={this.handleInputChange} />
+          </label>
+          <br />
+          <label>
+            Postal Code:
+            <input
+              name="postalCode"
+              type="text"
+              value={this.state.postalCode}
+              onChange={this.handleInputChange} />
+          </label>
+          <br />
+          <label>
+            Location:
+            <input
+              name="location"
+              type="text"
+              value={this.state.location}
+              onChange={this.handleInputChange} />
+          </label>
+          <br />
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
     );
   }
 }
