@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './QueryForm.css'
 import axios from 'axios'
 import WeatherForm from '../WeatherForm/WeatherForm'
+import ClothingForm from '../ClothingForm/ClothingForm'
 
 function QueryForm() {
   
@@ -44,6 +45,7 @@ function QueryForm() {
 
   return (
     <div>
+      <h6>Query Form</h6>
       <form onSubmit={onSubmit}>
         <label>
           Get Air Quality Index:
@@ -68,8 +70,11 @@ function QueryForm() {
       </form>
 
       {weatherData && <WeatherForm data={weatherData}/> } 
-      {weatherData === null && <span>Please wait ...</span>}
+      {weatherData === null && <span>Getting your weather condition...</span>}
       {/* if data === null then render a loading spinner */}
+
+      {weatherData && <ClothingForm />}
+      {weatherData === null && <span>Preparing your clothing recommendation...</span>}
     </div>
   )
 }
