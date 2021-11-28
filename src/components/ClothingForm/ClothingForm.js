@@ -1,6 +1,12 @@
+import ClothingIcon from './ClothingIcon'
+
 function ClothingForm() {
     return (
-        <h6>Clothing Form</h6>
+        <div>
+            <h6>Clothing Form</h6>
+            <ClothingIcon />
+        </div>
+        
     )
 }
 
