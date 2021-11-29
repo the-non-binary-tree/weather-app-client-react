@@ -1,6 +1,9 @@
 function ClothingIcon() {
     return (
-        <h6>Clothing Icon</h6>
+        <div>
+            <h6>Clothing Icon</h6>
+            <img src='assets/001-shirt.svg' alt='Raincoat'/>
+        </div>
     )
 }
 

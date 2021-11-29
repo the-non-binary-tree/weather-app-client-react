@@ -1,6 +1,6 @@
 import ClothingIcon from './ClothingIcon'
 
-function ClothingForm() {
+function ClothingForm({ data }) {
     return (
         <div>
             <h6>Clothing Form</h6>

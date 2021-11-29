@@ -69,14 +69,14 @@ function QueryForm() {
         <input type="submit" value="Submit" />
       </form>
 
-      <div class='row'>
-        <div class='column'>
+      <div className='row'>
+        <div className='column'>
           {weatherData && <WeatherForm data={weatherData}/> } 
           {weatherData === null && <span>Getting your weather condition...</span>}
           {/* if data === null then render a loading spinner */}
         </div>
-        <div class='column'>
-          {weatherData && <ClothingForm />}
+        <div className='column'>
+          {weatherData && <ClothingForm data={weatherData}/>}
           {weatherData === null && <span>Preparing your clothing recommendation...</span>}
         </div>
       </div>
