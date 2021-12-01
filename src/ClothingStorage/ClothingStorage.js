@@ -6,10 +6,10 @@ function ClothingItem(name, source, tags) {
 
 
 //iterate through folder assests and print out filenames
+// create ClothingItem object
 const fs = require('fs');
 const path = require('path');
-const sourceDirectory = '../../public/assets';
-const srcPath = 'assets';
+const sourceDirectory = '../assets';
 
 (async () => {
     try {
@@ -17,11 +17,13 @@ const srcPath = 'assets';
 
         for (const file of files) {
             const filepath = path.join(sourceDirectory, file)
-            const fileSrcPath = path.join(srcPath, file)
 
             const stat = await fs.promises.stat(filepath)
             if (stat.isFile())
-                console.log(`${fileSrcPath} is a file`)
+                console.log(`${file} is a file at path ${filepath}`)
+                const clothingItem = new ClothingItem(file, filepath, [])
+                console.log(clothingItem)
+                
         }
     }
     catch (e) {
