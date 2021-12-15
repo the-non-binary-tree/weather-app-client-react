@@ -76,7 +76,7 @@ function QueryForm() {
           {/* if data === null then render a loading spinner */}
         </div>
         <div className='column'>
-          {weatherData && <ClothingForm data={weatherData}/>}
+          {weatherData && <ClothingForm clothingItems={weatherData.clothingItems}/>}
           {weatherData === null && <span>Preparing your clothing recommendation...</span>}
         </div>
       </div>

@@ -1,10 +1,14 @@
 import ClothingIcon from './ClothingIcon'
 
-function ClothingForm({ data }) {
+function ClothingForm({ clothingItems }) {
     return (
         <div>
             <h6>Clothing Form</h6>
-            <ClothingIcon />
+            <ul>
+            {clothingItems.map(clothingItem => {
+                return (<li><ClothingIcon clothingItem={clothingItem} /></li>)
+            })}
+            </ul>
         </div>
         
     )

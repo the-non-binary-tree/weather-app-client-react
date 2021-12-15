@@ -1,12 +1,13 @@
 function WeatherForm({ data }) {
-    const location_name = data.data.location.name
-    const temp_c = data.data.current.temp_c
-    const temp_f = data.data.current.temp_f
-    const is_day = data.data.current.is_day
-    const condition_text = data.data.current.condition.text
-    const condition_icon = data.data.current.condition.icon
-    const feelslike_c = data.data.current.feelslike_c
-    const feelslike_f = data.data.current.feelslike_f
+    const weatherViewObject = data
+    const location_name = weatherViewObject.location.city
+    const temp_c = weatherViewObject.tempCelsius
+    const temp_f = weatherViewObject.tempFahrenheit
+    const is_day = weatherViewObject.isDay
+    const condition_text = weatherViewObject.condition.name
+    const condition_icon = weatherViewObject.condition.imageUrl
+    const feelslike_c = weatherViewObject.tempCelsiusFeelLike
+    const feelslike_f = weatherViewObject.tempFahrenheitFeelLike
     return (
         <div>
             <h6>Weather Form</h6>
