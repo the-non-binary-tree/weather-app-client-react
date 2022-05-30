@@ -1,6 +1,8 @@
 Wear The Weather
 > There's no bad weather, only bad clothing.
 
+This is the front end repo. For the back end repo visit: https://github.com/the-non-binary-tree/weather-app-server-node 
+
 # How it started
 It started with our family being overwhelmed by differences in climate between places where we've been and Seattle, and between each member.
 What I feel like hot just enough to turn on the fan, my partner feels like burning. 
